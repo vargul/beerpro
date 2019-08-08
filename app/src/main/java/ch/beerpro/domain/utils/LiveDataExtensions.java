@@ -1,8 +1,10 @@
 package ch.beerpro.domain.utils;
 
 import android.util.Pair;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
+
 import org.apache.commons.lang3.tuple.Triple;
 
 public class LiveDataExtensions {

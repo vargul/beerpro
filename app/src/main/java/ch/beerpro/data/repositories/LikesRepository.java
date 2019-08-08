@@ -1,7 +1,5 @@
 package ch.beerpro.data.repositories;
 
-import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
-import ch.beerpro.domain.models.Rating;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -9,6 +7,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Transaction;
 
 import java.util.Map;
+
+import ch.beerpro.domain.models.Rating;
+import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
 
 public class LikesRepository {
 

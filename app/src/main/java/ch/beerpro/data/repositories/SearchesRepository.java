@@ -1,15 +1,17 @@
 package ch.beerpro.data.repositories;
 
 import androidx.lifecycle.LiveData;
-import ch.beerpro.domain.models.Search;
-import ch.beerpro.domain.utils.FirestoreQueryLiveDataArray;
-import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import java.util.List;
+
+import ch.beerpro.domain.models.Search;
+import ch.beerpro.domain.utils.FirestoreQueryLiveDataArray;
+import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
 
 public class SearchesRepository {
 

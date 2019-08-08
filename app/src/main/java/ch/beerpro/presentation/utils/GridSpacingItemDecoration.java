@@ -2,6 +2,7 @@ package ch.beerpro.presentation.utils;
 
 import android.graphics.Rect;
 import android.view.View;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 /**

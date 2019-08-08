@@ -5,7 +5,7 @@
  * The {@link ch.beerpro.presentation.MainActivity} has three tabs, these correspond to the explore, ratings and
  * profile subpackages. The tabs are just fragments, not activits, and all share the same
  * {@link ch.beerpro.presentation.MainViewModel} view model.
- *
+ * <p>
  * The details package is not directly reachabel from the main screen but from many other activities and fragments
  * and it thus deservers its own (presentation) top-level package.
  *

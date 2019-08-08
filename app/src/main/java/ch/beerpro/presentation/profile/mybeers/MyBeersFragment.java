@@ -5,17 +5,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ch.beerpro.R;
 import ch.beerpro.domain.models.MyBeer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MyBeersFragment extends Fragment {
 
@@ -44,9 +46,9 @@ public class MyBeersFragment extends Fragment {
 
 
         MyBeersViewModel model = ViewModelProviders.of(getActivity()).get(MyBeersViewModel.class);
-        model.getMyFilteredBeers().observe(getActivity(), this::handleBeersChanged);
 
         adapter = new MyBeersRecyclerViewAdapter(interactionListener, model.getCurrentUser());
+        model.getMyFilteredBeers().observe(getActivity(), this::handleBeersChanged);
 
         recyclerView.setAdapter(adapter);
         return view;

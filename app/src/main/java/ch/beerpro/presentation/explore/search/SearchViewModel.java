@@ -1,20 +1,23 @@
 package ch.beerpro.presentation.explore.search;
 
 import android.util.Pair;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.google.common.base.Strings;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import ch.beerpro.data.repositories.BeersRepository;
 import ch.beerpro.data.repositories.CurrentUser;
 import ch.beerpro.data.repositories.SearchesRepository;
 import ch.beerpro.data.repositories.WishlistRepository;
 import ch.beerpro.domain.models.Beer;
 import ch.beerpro.domain.models.Search;
-import com.google.common.base.Strings;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import static androidx.lifecycle.Transformations.map;
 import static androidx.lifecycle.Transformations.switchMap;

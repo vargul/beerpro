@@ -7,10 +7,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.text.DateFormat;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ch.beerpro.GlideApp;
@@ -20,11 +27,6 @@ import ch.beerpro.domain.models.MyBeer;
 import ch.beerpro.domain.models.MyBeerFromRating;
 import ch.beerpro.domain.models.MyBeerFromWishlist;
 import ch.beerpro.presentation.utils.DrawableHelpers;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.text.DateFormat;
 
 
 public class MyBeersRecyclerViewAdapter extends ListAdapter<MyBeer, MyBeersRecyclerViewAdapter.ViewHolder> {

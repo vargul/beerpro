@@ -2,9 +2,10 @@ package ch.beerpro.presentation.utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import ch.beerpro.R;
 
 import java.util.Arrays;
+
+import ch.beerpro.R;
 
 public class BackgroundImageProvider {
 

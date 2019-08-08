@@ -1,6 +1,7 @@
 package ch.beerpro.presentation.profile.mybeers;
 
 import android.widget.ImageView;
+
 import ch.beerpro.domain.models.Beer;
 
 public interface OnMyBeerItemInteractionListener {

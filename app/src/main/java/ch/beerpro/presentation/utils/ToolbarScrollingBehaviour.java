@@ -6,11 +6,13 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.ViewCompat;
+
 import ch.beerpro.R;
 
 public class ToolbarScrollingBehaviour<V extends View> extends CoordinatorLayout.Behavior<V> {

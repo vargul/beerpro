@@ -8,26 +8,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import ch.beerpro.GlideApp;
-import ch.beerpro.R;
-import ch.beerpro.domain.models.Rating;
-import ch.beerpro.domain.models.Wish;
-import ch.beerpro.presentation.MainViewModel;
-import ch.beerpro.presentation.profile.mybeers.MyBeersActivity;
-import ch.beerpro.domain.models.MyBeer;
-import ch.beerpro.presentation.profile.myratings.MyRatingsActivity;
-import ch.beerpro.presentation.profile.mywishlist.WishlistActivity;
-import com.bumptech.glide.Glide;
+
 import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import ch.beerpro.GlideApp;
+import ch.beerpro.R;
+import ch.beerpro.domain.models.MyBeer;
+import ch.beerpro.domain.models.Rating;
+import ch.beerpro.domain.models.Wish;
+import ch.beerpro.presentation.MainViewModel;
+import ch.beerpro.presentation.profile.mybeers.MyBeersActivity;
+import ch.beerpro.presentation.profile.myratings.MyRatingsActivity;
+import ch.beerpro.presentation.profile.mywishlist.WishlistActivity;
 
 /**
  * Because the profile view is not a whole activity but rendered as part of the MainActivity in a tab, we use a so-called fragment.

@@ -3,13 +3,19 @@ package ch.beerpro.presentation.details;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import ch.beerpro.data.repositories.*;
-import ch.beerpro.domain.models.Beer;
-import ch.beerpro.domain.models.Rating;
-import ch.beerpro.domain.models.Wish;
+
 import com.google.android.gms.tasks.Task;
 
 import java.util.List;
+
+import ch.beerpro.data.repositories.BeersRepository;
+import ch.beerpro.data.repositories.CurrentUser;
+import ch.beerpro.data.repositories.LikesRepository;
+import ch.beerpro.data.repositories.RatingsRepository;
+import ch.beerpro.data.repositories.WishlistRepository;
+import ch.beerpro.domain.models.Beer;
+import ch.beerpro.domain.models.Rating;
+import ch.beerpro.domain.models.Wish;
 
 public class DetailsViewModel extends ViewModel implements CurrentUser {
 

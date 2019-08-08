@@ -2,17 +2,23 @@ package ch.beerpro.domain.utils;
 
 import android.os.Handler;
 import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
-import ch.beerpro.domain.models.Entity;
-import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
+
 import com.firebase.ui.common.ChangeEventType;
 import com.firebase.ui.firestore.ChangeEventListener;
 import com.firebase.ui.firestore.FirestoreArray;
 import com.firebase.ui.firestore.ObservableSnapshotArray;
-import com.google.firebase.firestore.*;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.MetadataChanges;
+import com.google.firebase.firestore.Query;
 
 import java.util.List;
+
+import ch.beerpro.domain.models.Entity;
+import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
 
 public class FirestoreQueryLiveDataArray<T extends Entity> extends LiveData<List<T>> implements ChangeEventListener {
 

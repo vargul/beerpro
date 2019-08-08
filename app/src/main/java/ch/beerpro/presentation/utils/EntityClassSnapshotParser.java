@@ -1,9 +1,11 @@
 package ch.beerpro.presentation.utils;
 
 import androidx.annotation.NonNull;
-import ch.beerpro.domain.models.Entity;
+
 import com.firebase.ui.firestore.ClassSnapshotParser;
 import com.google.firebase.firestore.DocumentSnapshot;
+
+import ch.beerpro.domain.models.Entity;
 
 public class EntityClassSnapshotParser<T extends Entity> extends ClassSnapshotParser<T> {
     public EntityClassSnapshotParser(Class<T> modelClass) {

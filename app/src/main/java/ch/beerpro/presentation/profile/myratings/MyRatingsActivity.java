@@ -4,20 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.MenuItem;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ch.beerpro.R;
 import ch.beerpro.domain.models.Rating;
 import ch.beerpro.domain.models.Wish;
 import ch.beerpro.presentation.details.DetailsActivity;
-import lombok.val;
-
-import java.util.List;
 
 public class MyRatingsActivity extends AppCompatActivity implements OnMyRatingItemInteractionListener {
 
@@ -42,7 +43,7 @@ public class MyRatingsActivity extends AppCompatActivity implements OnMyRatingIt
         model = ViewModelProviders.of(this).get(MyRatingsViewModel.class);
         model.getMyRatingsWithWishes().observe(this, this::updateMyRatings);
 
-        val layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new MyRatingsRecyclerViewAdapter(this, model.getCurrentUser());
@@ -51,7 +52,7 @@ public class MyRatingsActivity extends AppCompatActivity implements OnMyRatingIt
 
     }
 
-    private void updateMyRatings(List<Pair<Rating,Wish>> entries) {
+    private void updateMyRatings(List<Pair<Rating, Wish>> entries) {
         adapter.submitList(entries);
     }
 

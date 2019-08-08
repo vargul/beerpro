@@ -1,25 +1,27 @@
 package ch.beerpro.presentation.details;
 
-import ch.beerpro.GlideApp;
-import ch.beerpro.R;
-import ch.beerpro.domain.models.Rating;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import ch.beerpro.presentation.utils.EntityDiffItemCallback;
-import com.bumptech.glide.Glide;
+
 import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.text.DateFormat;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import ch.beerpro.GlideApp;
+import ch.beerpro.R;
+import ch.beerpro.domain.models.Rating;
+import ch.beerpro.presentation.utils.EntityDiffItemCallback;
 
 
 public class RatingsRecyclerViewAdapter extends ListAdapter<Rating, RatingsRecyclerViewAdapter.ViewHolder> {

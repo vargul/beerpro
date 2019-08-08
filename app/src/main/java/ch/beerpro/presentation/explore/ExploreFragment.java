@@ -6,15 +6,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ch.beerpro.R;
 import ch.beerpro.presentation.explore.search.SearchActivity;
 import ch.beerpro.presentation.utils.ViewPagerAdapter;
-import com.google.android.material.tabs.TabLayout;
 
 /**
  * This fragment is the first fragment shown in the {@link ch.beerpro.presentation.MainActivity}. It lets users

@@ -7,20 +7,21 @@ import android.util.Pair;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ch.beerpro.R;
 import ch.beerpro.domain.models.Beer;
 import ch.beerpro.domain.models.Wish;
 import ch.beerpro.presentation.details.DetailsActivity;
-import lombok.val;
-
-import java.util.List;
 
 public class WishlistActivity extends AppCompatActivity implements OnWishlistItemInteractionListener {
 
@@ -49,7 +50,7 @@ public class WishlistActivity extends AppCompatActivity implements OnWishlistIte
         model = ViewModelProviders.of(this).get(WishlistViewModel.class);
         model.getMyWishlistWithBeers().observe(this, this::updateWishlist);
 
-        val layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new WishlistRecyclerViewAdapter(this);

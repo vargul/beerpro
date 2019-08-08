@@ -1,12 +1,12 @@
 package ch.beerpro.presentation.details.createrating;
 
-import android.util.Log;
-import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
-import ch.beerpro.domain.models.Rating;
 import android.net.Uri;
+import android.util.Log;
+
 import androidx.lifecycle.ViewModel;
-import ch.beerpro.domain.models.Beer;
-import com.google.android.gms.tasks.*;
+
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -15,6 +15,10 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.Collections;
 import java.util.Date;
+
+import ch.beerpro.domain.models.Beer;
+import ch.beerpro.domain.models.Rating;
+import ch.beerpro.presentation.utils.EntityClassSnapshotParser;
 
 public class CreateRatingViewModel extends ViewModel {
 

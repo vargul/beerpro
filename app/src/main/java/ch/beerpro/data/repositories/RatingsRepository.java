@@ -1,10 +1,9 @@
 package ch.beerpro.data.repositories;
 
 import android.util.Pair;
+
 import androidx.lifecycle.LiveData;
-import ch.beerpro.domain.models.Rating;
-import ch.beerpro.domain.models.Wish;
-import ch.beerpro.domain.utils.FirestoreQueryLiveDataArray;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -12,6 +11,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+
+import ch.beerpro.domain.models.Rating;
+import ch.beerpro.domain.models.Wish;
+import ch.beerpro.domain.utils.FirestoreQueryLiveDataArray;
 
 import static androidx.lifecycle.Transformations.map;
 import static androidx.lifecycle.Transformations.switchMap;
