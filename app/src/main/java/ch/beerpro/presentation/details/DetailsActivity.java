@@ -31,6 +31,7 @@ import butterknife.OnClick;
 import ch.beerpro.GlideApp;
 import ch.beerpro.R;
 import ch.beerpro.domain.models.Beer;
+import ch.beerpro.domain.models.FridgeItem;
 import ch.beerpro.domain.models.Rating;
 import ch.beerpro.domain.models.Wish;
 import ch.beerpro.presentation.details.createrating.CreateRatingActivity;
@@ -64,6 +65,9 @@ public class DetailsActivity extends AppCompatActivity implements OnRatingLikedL
 
     @BindView(R.id.wishlist)
     ToggleButton wishlist;
+
+    @BindView(R.id.fridge)
+    ToggleButton fridge;
 
     @BindView(R.id.manufacturer)
     TextView manufacturer;
@@ -107,6 +111,7 @@ public class DetailsActivity extends AppCompatActivity implements OnRatingLikedL
         model.getBeer().observe(this, this::updateBeer);
         model.getRatings().observe(this, this::updateRatings);
         model.getWish().observe(this, this::toggleWishlistView);
+        model.getFridgeItems().observe(this, this::toggleFridgeView);
 
         recyclerView.setAdapter(adapter);
         addRatingBar.setOnRatingBarChangeListener(this::addNewRating);
@@ -118,14 +123,6 @@ public class DetailsActivity extends AppCompatActivity implements OnRatingLikedL
         intent.putExtra(CreateRatingActivity.RATING, v);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, addRatingBar, "rating");
         startActivity(intent, options.toBundle());
-    }
-
-    @OnClick(R.id.actionsButton)
-    public void showBottomSheetDialog() {
-        View view = getLayoutInflater().inflate(R.layout.single_bottom_sheet_dialog, null);
-        BottomSheetDialog dialog = new BottomSheetDialog(this);
-        dialog.setContentView(view);
-        dialog.show();
     }
 
     private void updateBeer(Beer item) {
@@ -182,6 +179,29 @@ public class DetailsActivity extends AppCompatActivity implements OnRatingLikedL
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @OnClick(R.id.fridge)
+    public void onFridgeClickedListener(View view) {
+        model.toggleItemInFridge(model.getBeer().getValue().getId());
+        /*
+         * We won't get an update from firestore when the wish is removed, so we need to reset the UI state ourselves.
+         * */
+        if (!fridge.isChecked()) {
+            toggleFridgeView(null);
+        }
+    }
+
+    private void toggleFridgeView(FridgeItem fridgeItem) {
+        if (fridgeItem != null) {
+            int color = getResources().getColor(R.color.colorPrimary);
+            setDrawableTint(fridge, color);
+            fridge.setChecked(true);
+        } else {
+            int color = getResources().getColor(android.R.color.darker_gray);
+            setDrawableTint(fridge, color);
+            fridge.setChecked(false);
         }
     }
 }
