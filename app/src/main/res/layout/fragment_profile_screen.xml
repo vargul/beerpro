@@ -50,35 +50,36 @@
 
                 android:id="@+id/myBeers"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/profile_list_item_height"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:orientation="horizontal"
-                android:focusable="true">
+                android:focusable="true"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
 
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/minimum_margin"
+                    android:layout_margin="@dimen/profile_list_icon_margin"
                     app:srcCompat="@drawable/ic_bottle" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="@dimen/profile_list_text_margin_start"
                     android:layout_weight="1"
                     android:text="Meine Biere" />
 
 
                 <TextView
                     android:id="@+id/myBeersCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
+                    android:layout_gravity="center|center_vertical"
                     android:layout_marginEnd="@dimen/default_margin"
+                    android:gravity="center"
                     android:text="0" />
             </LinearLayout>
 
@@ -91,35 +92,36 @@
 
                 android:id="@+id/myRatings"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/profile_list_item_height"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:orientation="horizontal"
-                android:focusable="true">
+                android:focusable="true"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
 
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/minimum_margin"
+                    android:layout_margin="@dimen/profile_list_icon_margin"
                     app:srcCompat="@drawable/ic_star_brown_24dp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="@dimen/profile_list_text_margin_start"
                     android:layout_weight="1"
                     android:text="Bewertungen" />
 
 
                 <TextView
                     android:id="@+id/myRatingsCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
+                    android:layout_gravity="center|center_vertical"
                     android:layout_marginEnd="@dimen/default_margin"
+                    android:gravity="center"
                     android:text="0" />
             </LinearLayout>
 
@@ -133,35 +135,36 @@
 
                 android:id="@+id/myWishlist"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/profile_list_item_height"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:orientation="horizontal"
-                android:focusable="true">
+                android:focusable="true"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
 
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/minimum_margin"
+                    android:layout_margin="@dimen/profile_list_icon_margin"
                     app:srcCompat="@drawable/ic_bookmark_brown_24dp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="@dimen/profile_list_text_margin_start"
                     android:layout_weight="1"
                     android:text="Wunschliste" />
 
 
                 <TextView
                     android:id="@+id/myWishlistCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
+                    android:layout_gravity="center|center_vertical"
                     android:layout_marginEnd="@dimen/default_margin"
+                    android:gravity="center"
                     android:text="0" />
             </LinearLayout>
 
@@ -175,35 +178,36 @@
 
                 android:id="@+id/myFridge"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/profile_list_item_height"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:orientation="horizontal"
                 android:focusable="true">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
 
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/minimum_margin"
+                    android:layout_margin="@dimen/profile_list_icon_margin"
                     app:srcCompat="@drawable/ic_refrigerator" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="@dimen/profile_list_text_margin_start"
                     android:layout_weight="1"
                     android:text="Kühlschrank" />
 
 
                 <TextView
                     android:id="@+id/myFridgeCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_width="@dimen/profile_list_icon_width"
+                    android:layout_height="@dimen/profile_list_icon_height"
+                    android:layout_gravity="center|center_vertical"
                     android:layout_marginEnd="@dimen/default_margin"
+                    android:gravity="center"
                     android:text="0" />
             </LinearLayout>
         </LinearLayout>
