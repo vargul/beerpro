@@ -50,7 +50,7 @@ public class MyBeersViewModel extends ViewModel implements CurrentUser {
         LiveData<List<FridgeItem>> myFridge = fridgeRepository.getMyFridge(currentUserId);
         LiveData<List<Rating>> myRatings = ratingsRepository.getMyRatings(currentUserId);
 
-        LiveData<List<MyBeer>> myBeers = myBeersRepository.getMyOtherBeers(allBeers, myWishlist, myFridge);
+        LiveData<List<MyBeer>> myBeers = myBeersRepository.getAllMyBeers(allBeers, myFridge, myWishlist, myRatings);
 
         myFilteredBeers = map(zip(searchTerm, myBeers), MyBeersViewModel::filter);
 
@@ -81,6 +81,10 @@ public class MyBeersViewModel extends ViewModel implements CurrentUser {
 
     public void toggleItemInWishlist(String beerId) {
         wishlistRepository.toggleUserWishlistItem(getCurrentUser().getUid(), beerId);
+    }
+
+    public void toggleItemInFridge(String beerId) {
+        fridgeRepository.toggleUserFridgeItem(getCurrentUser().getUid(), beerId);
     }
 
     public void setSearchTerm(String searchTerm) {

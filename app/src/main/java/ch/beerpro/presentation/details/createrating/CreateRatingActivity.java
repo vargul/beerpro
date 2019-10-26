@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -22,11 +23,19 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.yalantis.ucrop.UCrop;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -62,6 +71,9 @@ public class CreateRatingActivity extends AppCompatActivity {
 
     @BindView(R.id.photoExplanation)
     TextView photoExplanation;
+
+    @BindView(R.id.addPlaceButton)
+    Button addPlace;
 
     private CreateRatingViewModel model;
 
@@ -114,7 +126,37 @@ public class CreateRatingActivity extends AppCompatActivity {
             photo.setImageURI(model.getPhoto());
             photoExplanation.setText(null);
         }
+
+        Places.initialize(getApplicationContext(), "AIzaSyA69T7VUbKRtV3zHzAguA5nCN6VliCsTe4");
+
+        findViewById(R.id.addPlaceButton).setOnClickListener(v ->{
+            int AUTOCOMPLETE_REQUEST_CODE = 1;
+
+            List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+
+            Intent intent = new Autocomplete.IntentBuilder(
+                    AutocompleteActivityMode.OVERLAY, fields)
+                    .build(this);
+            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+
+        });
     }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
+//            if (resultCode == RESULT_OK) {
+//                Place place = Autocomplete.getPlaceFromIntent(data);
+//                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
+//            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
+//                // TODO: Handle the error.
+//                Status status = Autocomplete.getStatusFromIntent(data);
+//                Log.i(TAG, status.getStatusMessage());
+//            } else if (resultCode == RESULT_CANCELED) {
+//                // The user canceled the operation.
+//            }
+//        }
+//    }
+
 
 
     @Override

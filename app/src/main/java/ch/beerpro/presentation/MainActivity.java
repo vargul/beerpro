@@ -60,13 +60,6 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setLogo(R.drawable.beer_glass_icon);
 
         setupViewPager(viewPager, tabLayout);
-
-        /*
-         * Just a placeholder for your own ideas...
-         * */
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
     }
 
     private void setupViewPager(ViewPager viewPager, TabLayout tabLayout) {

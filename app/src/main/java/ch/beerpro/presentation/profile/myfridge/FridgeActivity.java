@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,7 +58,6 @@ public class FridgeActivity extends AppCompatActivity implements OnFridgeItemInt
         adapter = new FridgeRecyclerViewAdapter(this);
 
         recyclerView.setAdapter(adapter);
-
     }
 
     private void updateFridge(List<Pair<FridgeItem, Beer>> entries) {
